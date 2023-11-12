@@ -1,0 +1,374 @@
+4D 54 68 64 00 00 00 06 00 01 00 02 0B 40   MThd length:6, format:1, tracks:2, metrical time:2880 ppqn
+
+4D 54 72 6B 00 00 00 CB…                    MTrk 0  length:203
+      00 FF 51 03 09 27 C0                  tick:0          delta:0          51 Tempo                  tempo:600000
+      00 B0 65 00                           tick:0          delta:0          B0 Controller             channel:0  101/Registered Parameter Number (MSB), value:0
+      00 B0 64 00                           tick:0          delta:0          B0 Controller             channel:0  100/Registered Parameter Number (LSB), value:0
+      00 E0 00 40                           tick:0          delta:0          E0 PitchBend              channel:0  bend:64
+      00 B1 65 00                           tick:0          delta:0          B1 Controller             channel:1  101/Registered Parameter Number (MSB), value:0
+      00 B1 64 00                           tick:0          delta:0          B1 Controller             channel:1  100/Registered Parameter Number (LSB), value:0
+      00 E1 00 40                           tick:0          delta:0          E1 PitchBend              channel:1  bend:64
+      00 B2 65 00                           tick:0          delta:0          B2 Controller             channel:2  101/Registered Parameter Number (MSB), value:0
+      00 B2 64 00                           tick:0          delta:0          B2 Controller             channel:2  100/Registered Parameter Number (LSB), value:0
+      00 E2 00 40                           tick:0          delta:0          E2 PitchBend              channel:2  bend:64
+      00 B3 65 00                           tick:0          delta:0          B3 Controller             channel:3  101/Registered Parameter Number (MSB), value:0
+      00 B3 64 00                           tick:0          delta:0          B3 Controller             channel:3  100/Registered Parameter Number (LSB), value:0
+      00 E3 00 40                           tick:0          delta:0          E3 PitchBend              channel:3  bend:64
+      00 B4 65 00                           tick:0          delta:0          B4 Controller             channel:4  101/Registered Parameter Number (MSB), value:0
+      00 B4 64 00                           tick:0          delta:0          B4 Controller             channel:4  100/Registered Parameter Number (LSB), value:0
+      00 E4 00 40                           tick:0          delta:0          E4 PitchBend              channel:4  bend:64
+      00 B5 65 00                           tick:0          delta:0          B5 Controller             channel:5  101/Registered Parameter Number (MSB), value:0
+      00 B5 64 00                           tick:0          delta:0          B5 Controller             channel:5  100/Registered Parameter Number (LSB), value:0
+      00 E5 00 40                           tick:0          delta:0          E5 PitchBend              channel:5  bend:64
+      00 B6 65 00                           tick:0          delta:0          B6 Controller             channel:6  101/Registered Parameter Number (MSB), value:0
+      00 B6 64 00                           tick:0          delta:0          B6 Controller             channel:6  100/Registered Parameter Number (LSB), value:0
+      00 E6 00 40                           tick:0          delta:0          E6 PitchBend              channel:6  bend:64
+      00 B7 65 00                           tick:0          delta:0          B7 Controller             channel:7  101/Registered Parameter Number (MSB), value:0
+      00 B7 64 00                           tick:0          delta:0          B7 Controller             channel:7  100/Registered Parameter Number (LSB), value:0
+      00 E7 00 40                           tick:0          delta:0          E7 PitchBend              channel:7  bend:64
+      00 B8 65 00                           tick:0          delta:0          B8 Controller             channel:8  101/Registered Parameter Number (MSB), value:0
+      00 B8 64 00                           tick:0          delta:0          B8 Controller             channel:8  100/Registered Parameter Number (LSB), value:0
+      00 E8 00 40                           tick:0          delta:0          E8 PitchBend              channel:8  bend:64
+      00 B9 65 00                           tick:0          delta:0          B9 Controller             channel:9  101/Registered Parameter Number (MSB), value:0
+      00 B9 64 00                           tick:0          delta:0          B9 Controller             channel:9  100/Registered Parameter Number (LSB), value:0
+      00 E9 00 40                           tick:0          delta:0          E9 PitchBend              channel:9  bend:64
+      00 BA 65 00                           tick:0          delta:0          BA Controller             channel:10 101/Registered Parameter Number (MSB), value:0
+      00 BA 64 00                           tick:0          delta:0          BA Controller             channel:10 100/Registered Parameter Number (LSB), value:0
+      00 EA 00 40                           tick:0          delta:0          EA PitchBend              channel:10 bend:64
+      00 BB 65 00                           tick:0          delta:0          BB Controller             channel:11 101/Registered Parameter Number (MSB), value:0
+      00 BB 64 00                           tick:0          delta:0          BB Controller             channel:11 100/Registered Parameter Number (LSB), value:0
+      00 EB 00 40                           tick:0          delta:0          EB PitchBend              channel:11 bend:64
+      00 BC 65 00                           tick:0          delta:0          BC Controller             channel:12 101/Registered Parameter Number (MSB), value:0
+      00 BC 64 00                           tick:0          delta:0          BC Controller             channel:12 100/Registered Parameter Number (LSB), value:0
+      00 EC 00 40                           tick:0          delta:0          EC PitchBend              channel:12 bend:64
+      00 BD 65 00                           tick:0          delta:0          BD Controller             channel:13 101/Registered Parameter Number (MSB), value:0
+      00 BD 64 00                           tick:0          delta:0          BD Controller             channel:13 100/Registered Parameter Number (LSB), value:0
+      00 ED 00 40                           tick:0          delta:0          ED PitchBend              channel:13 bend:64
+      00 BE 65 00                           tick:0          delta:0          BE Controller             channel:14 101/Registered Parameter Number (MSB), value:0
+      00 BE 64 00                           tick:0          delta:0          BE Controller             channel:14 100/Registered Parameter Number (LSB), value:0
+      00 EE 00 40                           tick:0          delta:0          EE PitchBend              channel:14 bend:64
+      00 BF 65 00                           tick:0          delta:0          BF Controller             channel:15 101/Registered Parameter Number (MSB), value:0
+      00 BF 64 00                           tick:0          delta:0          BF Controller             channel:15 100/Registered Parameter Number (LSB), value:0
+      00 EF 00 40                           tick:0          delta:0          EF PitchBend              channel:15 bend:64
+      00 FF 2F 00                           tick:0          delta:0          2F EndOfTrack
+
+4D 54 72 6B 00 00 05 AD…                    MTrk 1  length:1453
+      00 FF 59 02 00 00                     tick:0          delta:0          59 KeySignature           C major
+      00 FF 58 04 04 04 18 08               tick:0          delta:0          58 TimeSignature          4/16, 24 ticks per click, 8/32 per quarter
+      00 90 24 65                           tick:0          delta:0          90 NoteOn                 channel:0  note:C2, velocity:101
+      00 90 45 65                           tick:0          delta:0          90 NoteOn                 channel:0  note:A4, velocity:101
+      00 90 37 65                           tick:0          delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 34 65                           tick:0          delta:0          90 NoteOn                 channel:0  note:E3, velocity:101
+   92 00 80 24 00                           tick:2304       delta:2304       80 NoteOff                channel:0  note:C2, velocity:0
+      00 80 45 00                           tick:2304       delta:0          80 NoteOff                channel:0  note:A4, velocity:0
+      00 80 37 00                           tick:2304       delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 34 00                           tick:2304       delta:0          80 NoteOff                channel:0  note:E3, velocity:0
+   84 40 90 35 65                           tick:2880       delta:576        90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 39 65                           tick:2880       delta:0          90 NoteOn                 channel:0  note:A3, velocity:101
+      00 90 3F 65                           tick:2880       delta:0          90 NoteOn                 channel:0  note:D♯4, velocity:101
+   92 00 80 35 00                           tick:5184       delta:2304       80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 39 00                           tick:5184       delta:0          80 NoteOff                channel:0  note:A3, velocity:0
+      00 80 3F 00                           tick:5184       delta:0          80 NoteOff                channel:0  note:D♯4, velocity:0
+   8F 60 90 37 65                           tick:7200       delta:2016       90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 3C 65                           tick:7200       delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   A1 60 90 30 65                           tick:11520      delta:4320       90 NoteOn                 channel:0  note:C3, velocity:101
+   84 40 80 30 00                           tick:12096      delta:576        80 NoteOff                channel:0  note:C3, velocity:0
+   81 10 90 3E 65                           tick:12240      delta:144        90 NoteOn                 channel:0  note:D4, velocity:101
+   84 40 80 3E 00                           tick:12816      delta:576        80 NoteOff                channel:0  note:D4, velocity:0
+   81 10 90 41 65                           tick:12960      delta:144        90 NoteOn                 channel:0  note:F4, velocity:101
+   84 40 80 41 00                           tick:13536      delta:576        80 NoteOff                channel:0  note:F4, velocity:0
+   81 10 90 29 65                           tick:13680      delta:144        90 NoteOn                 channel:0  note:F2, velocity:101
+      00 90 3E 65                           tick:13680      delta:0          90 NoteOn                 channel:0  note:D4, velocity:101
+      00 90 30 65                           tick:13680      delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 39 65                           tick:13680      delta:0          90 NoteOn                 channel:0  note:A3, velocity:101
+   89 00 80 29 00                           tick:14832      delta:1152       80 NoteOff                channel:0  note:F2, velocity:0
+      00 80 3E 00                           tick:14832      delta:0          80 NoteOff                channel:0  note:D4, velocity:0
+      00 80 30 00                           tick:14832      delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 39 00                           tick:14832      delta:0          80 NoteOff                channel:0  note:A3, velocity:0
+   82 20 90 46 65                           tick:15120      delta:288        90 NoteOn                 channel:0  note:A♯4, velocity:101
+      00 90 2B 65                           tick:15120      delta:0          90 NoteOn                 channel:0  note:G2, velocity:101
+      00 90 36 65                           tick:15120      delta:0          90 NoteOn                 channel:0  note:F♯3, velocity:101
+   8D 40 80 37 00                           tick:16848      delta:1728       80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 3C 00                           tick:16848      delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 80 46 00                           tick:17424      delta:576        80 NoteOff                channel:0  note:A♯4, velocity:0
+      00 80 2B 00                           tick:17424      delta:0          80 NoteOff                channel:0  note:G2, velocity:0
+      00 80 36 00                           tick:17424      delta:0          80 NoteOff                channel:0  note:F♯3, velocity:0
+   8F 60 90 37 65                           tick:19440      delta:2016       90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 3C 65                           tick:19440      delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   A1 60 90 35 65                           tick:23760      delta:4320       90 NoteOn                 channel:0  note:F3, velocity:101
+   84 40 80 35 00                           tick:24336      delta:576        80 NoteOff                channel:0  note:F3, velocity:0
+   81 10 90 43 65                           tick:24480      delta:144        90 NoteOn                 channel:0  note:G4, velocity:101
+   84 40 80 43 00                           tick:25056      delta:576        80 NoteOff                channel:0  note:G4, velocity:0
+   81 10 90 46 65                           tick:25200      delta:144        90 NoteOn                 channel:0  note:A♯4, velocity:101
+   84 40 80 46 00                           tick:25776      delta:576        80 NoteOff                channel:0  note:A♯4, velocity:0
+   81 10 90 2E 65                           tick:25920      delta:144        90 NoteOn                 channel:0  note:A♯2, velocity:101
+      00 90 43 65                           tick:25920      delta:0          90 NoteOn                 channel:0  note:G4, velocity:101
+      00 90 35 65                           tick:25920      delta:0          90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 32 65                           tick:25920      delta:0          90 NoteOn                 channel:0  note:D3, velocity:101
+   89 00 80 2E 00                           tick:27072      delta:1152       80 NoteOff                channel:0  note:A♯2, velocity:0
+      00 80 43 00                           tick:27072      delta:0          80 NoteOff                channel:0  note:G4, velocity:0
+      00 80 35 00                           tick:27072      delta:0          80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 32 00                           tick:27072      delta:0          80 NoteOff                channel:0  note:D3, velocity:0
+   82 20 90 3F 65                           tick:27360      delta:288        90 NoteOn                 channel:0  note:D♯4, velocity:101
+      00 90 30 65                           tick:27360      delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 3B 65                           tick:27360      delta:0          90 NoteOn                 channel:0  note:B3, velocity:101
+   8D 40 80 37 00                           tick:29088      delta:1728       80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 3C 00                           tick:29088      delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 80 3F 00                           tick:29664      delta:576        80 NoteOff                channel:0  note:D♯4, velocity:0
+      00 80 30 00                           tick:29664      delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 3B 00                           tick:29664      delta:0          80 NoteOff                channel:0  note:B3, velocity:0
+   84 40 90 44 65                           tick:30240      delta:576        90 NoteOn                 channel:0  note:G♯4, velocity:101
+   89 00 80 44 00                           tick:31392      delta:1152       80 NoteOff                channel:0  note:G♯4, velocity:0
+   82 20 90 41 65                           tick:31680      delta:288        90 NoteOn                 channel:0  note:F4, velocity:101
+      00 90 46 65                           tick:31680      delta:0          90 NoteOn                 channel:0  note:A♯4, velocity:101
+   92 00 80 41 00                           tick:33984      delta:2304       80 NoteOff                channel:0  note:F4, velocity:0
+      00 80 46 00                           tick:33984      delta:0          80 NoteOff                channel:0  note:A♯4, velocity:0
+   84 40 90 3A 65                           tick:34560      delta:576        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:35712      delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 2E 65                           tick:36000      delta:288        90 NoteOn                 channel:0  note:A♯2, velocity:101
+   84 40 80 2E 00                           tick:36576      delta:576        80 NoteOff                channel:0  note:A♯2, velocity:0
+   81 10 90 43 65                           tick:36720      delta:144        90 NoteOn                 channel:0  note:G4, velocity:101
+   84 40 80 43 00                           tick:37296      delta:576        80 NoteOff                channel:0  note:G4, velocity:0
+   81 10 90 35 65                           tick:37440      delta:144        90 NoteOn                 channel:0  note:F3, velocity:101
+   84 40 80 35 00                           tick:38016      delta:576        80 NoteOff                channel:0  note:F3, velocity:0
+   81 10 90 32 65                           tick:38160      delta:144        90 NoteOn                 channel:0  note:D3, velocity:101
+   84 40 80 32 00                           tick:38736      delta:576        80 NoteOff                channel:0  note:D3, velocity:0
+   81 10 90 3F 65                           tick:38880      delta:144        90 NoteOn                 channel:0  note:D♯4, velocity:101
+      00 90 30 65                           tick:38880      delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 3B 65                           tick:38880      delta:0          90 NoteOn                 channel:0  note:B3, velocity:101
+   92 00 80 3F 00                           tick:41184      delta:2304       80 NoteOff                channel:0  note:D♯4, velocity:0
+      00 80 30 00                           tick:41184      delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 3B 00                           tick:41184      delta:0          80 NoteOff                channel:0  note:B3, velocity:0
+   84 40 90 44 65                           tick:41760      delta:576        90 NoteOn                 channel:0  note:G♯4, velocity:101
+   89 00 80 44 00                           tick:42912      delta:1152       80 NoteOff                channel:0  note:G♯4, velocity:0
+   82 20 90 41 65                           tick:43200      delta:288        90 NoteOn                 channel:0  note:F4, velocity:101
+      00 90 46 65                           tick:43200      delta:0          90 NoteOn                 channel:0  note:A♯4, velocity:101
+   92 00 80 41 00                           tick:45504      delta:2304       80 NoteOff                channel:0  note:F4, velocity:0
+      00 80 46 00                           tick:45504      delta:0          80 NoteOff                channel:0  note:A♯4, velocity:0
+   84 40 90 3A 65                           tick:46080      delta:576        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   92 00 80 3A 00                           tick:48384      delta:2304       80 NoteOff                channel:0  note:A♯3, velocity:0
+   84 40 90 3A 65                           tick:48960      delta:576        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:50112      delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 30 65                           tick:50400      delta:288        90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 3C 65                           tick:50400      delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   92 00 80 30 00                           tick:52704      delta:2304       80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 3C 00                           tick:52704      delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 90 24 65                           tick:53280      delta:576        90 NoteOn                 channel:0  note:C2, velocity:101
+      00 90 45 65                           tick:53280      delta:0          90 NoteOn                 channel:0  note:A4, velocity:101
+      00 90 37 65                           tick:53280      delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 34 65                           tick:53280      delta:0          90 NoteOn                 channel:0  note:E3, velocity:101
+   A1 60 90 35 65                           tick:57600      delta:4320       90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 3E 65                           tick:57600      delta:0          90 NoteOn                 channel:0  note:D4, velocity:101
+   92 00 80 35 00                           tick:59904      delta:2304       80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 3E 00                           tick:59904      delta:0          80 NoteOff                channel:0  note:D4, velocity:0
+   84 40 90 3E 65                           tick:60480      delta:576        90 NoteOn                 channel:0  note:D4, velocity:101
+   89 00 80 3E 00                           tick:61632      delta:1152       80 NoteOff                channel:0  note:D4, velocity:0
+   82 20 90 3E 65                           tick:61920      delta:288        90 NoteOn                 channel:0  note:D4, velocity:101
+      00 90 37 65                           tick:61920      delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 3C 65                           tick:61920      delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   89 00 80 24 00                           tick:63072      delta:1152       80 NoteOff                channel:0  note:C2, velocity:0
+      00 80 45 00                           tick:63072      delta:0          80 NoteOff                channel:0  note:A4, velocity:0
+      00 80 37 00                           tick:63072      delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 34 00                           tick:63072      delta:0          80 NoteOff                channel:0  note:E3, velocity:0
+      00 80 3E 00                           tick:63072      delta:0          80 NoteOff                channel:0  note:D4, velocity:0
+      00 80 37 00                           tick:63072      delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 3C 00                           tick:63072      delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   82 20 90 24 65                           tick:63360      delta:288        90 NoteOn                 channel:0  note:C2, velocity:101
+   89 00 80 24 00                           tick:64512      delta:1152       80 NoteOff                channel:0  note:C2, velocity:0
+   82 20 90 45 65                           tick:64800      delta:288        90 NoteOn                 channel:0  note:A4, velocity:101
+      00 90 37 65                           tick:64800      delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+   A4 00 80 45 00                           tick:69408      delta:4608       80 NoteOff                channel:0  note:A4, velocity:0
+      00 80 37 00                           tick:69408      delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+   89 00 90 40 65                           tick:70560      delta:1152       90 NoteOn                 channel:0  note:E4, velocity:101
+      00 90 35 65                           tick:70560      delta:0          90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 29 65                           tick:70560      delta:0          90 NoteOn                 channel:0  note:F2, velocity:101
+   89 00 80 40 00                           tick:71712      delta:1152       80 NoteOff                channel:0  note:E4, velocity:0
+   98 60 90 41 65                           tick:74880      delta:3168       90 NoteOn                 channel:0  note:F4, velocity:101
+      00 90 37 65                           tick:74880      delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 3C 65                           tick:74880      delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   9B 00 80 35 00                           tick:78336      delta:3456       80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 29 00                           tick:78336      delta:0          80 NoteOff                channel:0  note:F2, velocity:0
+   A8 40 90 30 65                           tick:83520      delta:5184       90 NoteOn                 channel:0  note:C3, velocity:101
+   84 40 80 30 00                           tick:84096      delta:576        80 NoteOff                channel:0  note:C3, velocity:0
+   81 10 90 3E 65                           tick:84240      delta:144        90 NoteOn                 channel:0  note:D4, velocity:101
+   84 40 80 3E 00                           tick:84816      delta:576        80 NoteOff                channel:0  note:D4, velocity:0
+   81 10 90 41 65                           tick:84960      delta:144        90 NoteOn                 channel:0  note:F4, velocity:101
+   84 40 80 41 00                           tick:85536      delta:576        80 NoteOff                channel:0  note:F4, velocity:0
+   81 10 90 41 65                           tick:85680      delta:144        90 NoteOn                 channel:0  note:F4, velocity:101
+   92 00 80 41 00                           tick:87984      delta:2304       80 NoteOff                channel:0  note:F4, velocity:0
+   84 40 90 35 65                           tick:88560      delta:576        90 NoteOn                 channel:0  note:F3, velocity:101
+   89 00 80 35 00                           tick:89712      delta:1152       80 NoteOff                channel:0  note:F3, velocity:0
+   82 20 90 29 65                           tick:90000      delta:288        90 NoteOn                 channel:0  note:F2, velocity:101
+      00 90 3E 65                           tick:90000      delta:0          90 NoteOn                 channel:0  note:D4, velocity:101
+      00 90 30 65                           tick:90000      delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 39 65                           tick:90000      delta:0          90 NoteOn                 channel:0  note:A3, velocity:101
+   84 40 80 41 00                           tick:90576      delta:576        80 NoteOff                channel:0  note:F4, velocity:0
+      00 80 37 00                           tick:90576      delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 3C 00                           tick:90576      delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 80 29 00                           tick:91152      delta:576        80 NoteOff                channel:0  note:F2, velocity:0
+      00 80 3E 00                           tick:91152      delta:0          80 NoteOff                channel:0  note:D4, velocity:0
+      00 80 30 00                           tick:91152      delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 39 00                           tick:91152      delta:0          80 NoteOff                channel:0  note:A3, velocity:0
+   82 20 90 46 65                           tick:91440      delta:288        90 NoteOn                 channel:0  note:A♯4, velocity:101
+   92 00 80 46 00                           tick:93744      delta:2304       80 NoteOff                channel:0  note:A♯4, velocity:0
+   84 40 90 45 65                           tick:94320      delta:576        90 NoteOn                 channel:0  note:A4, velocity:101
+   89 00 80 45 00                           tick:95472      delta:1152       80 NoteOff                channel:0  note:A4, velocity:0
+   82 20 90 38 65                           tick:95760      delta:288        90 NoteOn                 channel:0  note:G♯3, velocity:101
+      00 90 3C 65                           tick:95760      delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   A1 60 90 35 65                           tick:100080     delta:4320       90 NoteOn                 channel:0  note:F3, velocity:101
+   84 40 80 35 00                           tick:100656     delta:576        80 NoteOff                channel:0  note:F3, velocity:0
+   81 10 90 43 65                           tick:100800     delta:144        90 NoteOn                 channel:0  note:G4, velocity:101
+   84 40 80 43 00                           tick:101376     delta:576        80 NoteOff                channel:0  note:G4, velocity:0
+   81 10 90 46 65                           tick:101520     delta:144        90 NoteOn                 channel:0  note:A♯4, velocity:101
+   84 40 80 46 00                           tick:102096     delta:576        80 NoteOff                channel:0  note:A♯4, velocity:0
+   81 10 90 2E 65                           tick:102240     delta:144        90 NoteOn                 channel:0  note:A♯2, velocity:101
+      00 90 43 65                           tick:102240     delta:0          90 NoteOn                 channel:0  note:G4, velocity:101
+      00 90 35 65                           tick:102240     delta:0          90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 32 65                           tick:102240     delta:0          90 NoteOn                 channel:0  note:D3, velocity:101
+   89 00 80 2E 00                           tick:103392     delta:1152       80 NoteOff                channel:0  note:A♯2, velocity:0
+      00 80 43 00                           tick:103392     delta:0          80 NoteOff                channel:0  note:G4, velocity:0
+      00 80 35 00                           tick:103392     delta:0          80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 32 00                           tick:103392     delta:0          80 NoteOff                channel:0  note:D3, velocity:0
+   82 20 90 3F 65                           tick:103680     delta:288        90 NoteOn                 channel:0  note:D♯4, velocity:101
+      00 90 44 65                           tick:103680     delta:0          90 NoteOn                 channel:0  note:G♯4, velocity:101
+   8D 40 80 38 00                           tick:105408     delta:1728       80 NoteOff                channel:0  note:G♯3, velocity:0
+      00 80 3C 00                           tick:105408     delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 80 3F 00                           tick:105984     delta:576        80 NoteOff                channel:0  note:D♯4, velocity:0
+      00 80 44 00                           tick:105984     delta:0          80 NoteOff                channel:0  note:G♯4, velocity:0
+   84 40 90 43 65                           tick:106560     delta:576        90 NoteOn                 channel:0  note:G4, velocity:101
+   89 00 80 43 00                           tick:107712     delta:1152       80 NoteOff                channel:0  note:G4, velocity:0
+   82 20 90 41 65                           tick:108000     delta:288        90 NoteOn                 channel:0  note:F4, velocity:101
+      00 90 46 65                           tick:108000     delta:0          90 NoteOn                 channel:0  note:A♯4, velocity:101
+   92 00 80 41 00                           tick:110304     delta:2304       80 NoteOff                channel:0  note:F4, velocity:0
+      00 80 46 00                           tick:110304     delta:0          80 NoteOff                channel:0  note:A♯4, velocity:0
+   84 40 90 3A 65                           tick:110880     delta:576        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:112032     delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 3A 65                           tick:112320     delta:288        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:113472     delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 30 65                           tick:113760     delta:288        90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 3C 65                           tick:113760     delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   92 00 80 30 00                           tick:116064     delta:2304       80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 3C 00                           tick:116064     delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 90 24 65                           tick:116640     delta:576        90 NoteOn                 channel:0  note:C2, velocity:101
+      00 90 45 65                           tick:116640     delta:0          90 NoteOn                 channel:0  note:A4, velocity:101
+      00 90 37 65                           tick:116640     delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 34 65                           tick:116640     delta:0          90 NoteOn                 channel:0  note:E3, velocity:101
+   A1 60 90 35 65                           tick:120960     delta:4320       90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 3E 65                           tick:120960     delta:0          90 NoteOn                 channel:0  note:D4, velocity:101
+   92 00 80 35 00                           tick:123264     delta:2304       80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 3E 00                           tick:123264     delta:0          80 NoteOff                channel:0  note:D4, velocity:0
+   84 40 90 3E 65                           tick:123840     delta:576        90 NoteOn                 channel:0  note:D4, velocity:101
+   89 00 80 3E 00                           tick:124992     delta:1152       80 NoteOff                channel:0  note:D4, velocity:0
+   82 20 90 3E 65                           tick:125280     delta:288        90 NoteOn                 channel:0  note:D4, velocity:101
+      00 90 37 65                           tick:125280     delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 3C 65                           tick:125280     delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   89 00 80 24 00                           tick:126432     delta:1152       80 NoteOff                channel:0  note:C2, velocity:0
+      00 80 45 00                           tick:126432     delta:0          80 NoteOff                channel:0  note:A4, velocity:0
+      00 80 37 00                           tick:126432     delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 34 00                           tick:126432     delta:0          80 NoteOff                channel:0  note:E3, velocity:0
+   89 00 80 3E 00                           tick:127584     delta:1152       80 NoteOff                channel:0  note:D4, velocity:0
+      00 80 37 00                           tick:127584     delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 3C 00                           tick:127584     delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 90 24 65                           tick:128160     delta:576        90 NoteOn                 channel:0  note:C2, velocity:101
+      00 90 45 65                           tick:128160     delta:0          90 NoteOn                 channel:0  note:A4, velocity:101
+      00 90 37 65                           tick:128160     delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 34 65                           tick:128160     delta:0          90 NoteOn                 channel:0  note:E3, velocity:101
+   A1 60 90 35 65                           tick:132480     delta:4320       90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 3E 65                           tick:132480     delta:0          90 NoteOn                 channel:0  note:D4, velocity:101
+   92 00 80 35 00                           tick:134784     delta:2304       80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 3E 00                           tick:134784     delta:0          80 NoteOff                channel:0  note:D4, velocity:0
+   84 40 90 3E 65                           tick:135360     delta:576        90 NoteOn                 channel:0  note:D4, velocity:101
+   89 00 80 3E 00                           tick:136512     delta:1152       80 NoteOff                channel:0  note:D4, velocity:0
+   82 20 90 41 65                           tick:136800     delta:288        90 NoteOn                 channel:0  note:F4, velocity:101
+      00 90 43 65                           tick:136800     delta:0          90 NoteOn                 channel:0  note:G4, velocity:101
+      00 90 30 65                           tick:136800     delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+   89 00 80 24 00                           tick:137952     delta:1152       80 NoteOff                channel:0  note:C2, velocity:0
+      00 80 45 00                           tick:137952     delta:0          80 NoteOff                channel:0  note:A4, velocity:0
+      00 80 37 00                           tick:137952     delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 34 00                           tick:137952     delta:0          80 NoteOff                channel:0  note:E3, velocity:0
+   89 00 80 41 00                           tick:139104     delta:1152       80 NoteOff                channel:0  note:F4, velocity:0
+      00 80 43 00                           tick:139104     delta:0          80 NoteOff                channel:0  note:G4, velocity:0
+      00 80 30 00                           tick:139104     delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+   84 40 90 30 65                           tick:139680     delta:576        90 NoteOn                 channel:0  note:C3, velocity:101
+   84 40 80 30 00                           tick:140256     delta:576        80 NoteOff                channel:0  note:C3, velocity:0
+   81 10 90 3E 65                           tick:140400     delta:144        90 NoteOn                 channel:0  note:D4, velocity:101
+   84 40 80 3E 00                           tick:140976     delta:576        80 NoteOff                channel:0  note:D4, velocity:0
+   81 10 90 46 65                           tick:141120     delta:144        90 NoteOn                 channel:0  note:A♯4, velocity:101
+   84 40 80 46 00                           tick:141696     delta:576        80 NoteOff                channel:0  note:A♯4, velocity:0
+   81 10 90 46 65                           tick:141840     delta:144        90 NoteOn                 channel:0  note:A♯4, velocity:101
+   89 00 80 46 00                           tick:142992     delta:1152       80 NoteOff                channel:0  note:A♯4, velocity:0
+   82 20 90 3A 65                           tick:143280     delta:288        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   92 00 80 3A 00                           tick:145584     delta:2304       80 NoteOff                channel:0  note:A♯3, velocity:0
+   84 40 90 46 65                           tick:146160     delta:576        90 NoteOn                 channel:0  note:A♯4, velocity:101
+   92 00 80 46 00                           tick:148464     delta:2304       80 NoteOff                channel:0  note:A♯4, velocity:0
+   84 40 90 2E 65                           tick:149040     delta:576        90 NoteOn                 channel:0  note:A♯2, velocity:101
+      00 90 43 65                           tick:149040     delta:0          90 NoteOn                 channel:0  note:G4, velocity:101
+      00 90 35 65                           tick:149040     delta:0          90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 32 65                           tick:149040     delta:0          90 NoteOn                 channel:0  note:D3, velocity:101
+   89 00 80 2E 00                           tick:150192     delta:1152       80 NoteOff                channel:0  note:A♯2, velocity:0
+      00 80 43 00                           tick:150192     delta:0          80 NoteOff                channel:0  note:G4, velocity:0
+      00 80 35 00                           tick:150192     delta:0          80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 32 00                           tick:150192     delta:0          80 NoteOff                channel:0  note:D3, velocity:0
+   82 20 90 3F 65                           tick:150480     delta:288        90 NoteOn                 channel:0  note:D♯4, velocity:101
+      00 90 30 65                           tick:150480     delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 47 65                           tick:150480     delta:0          90 NoteOn                 channel:0  note:B4, velocity:101
+   89 00 80 3F 00                           tick:151632     delta:1152       80 NoteOff                channel:0  note:D♯4, velocity:0
+      00 80 30 00                           tick:151632     delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 47 00                           tick:151632     delta:0          80 NoteOff                channel:0  note:B4, velocity:0
+   82 20 90 38 65                           tick:151920     delta:288        90 NoteOn                 channel:0  note:G♯3, velocity:101
+   92 00 80 38 00                           tick:154224     delta:2304       80 NoteOff                channel:0  note:G♯3, velocity:0
+   84 40 90 35 65                           tick:154800     delta:576        90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 3A 65                           tick:154800     delta:0          90 NoteOn                 channel:0  note:A♯3, velocity:101
+   92 00 80 35 00                           tick:157104     delta:2304       80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 3A 00                           tick:157104     delta:0          80 NoteOff                channel:0  note:A♯3, velocity:0
+   84 40 90 3A 65                           tick:157680     delta:576        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:158832     delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 3A 65                           tick:159120     delta:288        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   92 00 80 3A 00                           tick:161424     delta:2304       80 NoteOff                channel:0  note:A♯3, velocity:0
+   84 40 90 2E 65                           tick:162000     delta:576        90 NoteOn                 channel:0  note:A♯2, velocity:101
+      00 90 43 65                           tick:162000     delta:0          90 NoteOn                 channel:0  note:G4, velocity:101
+      00 90 35 65                           tick:162000     delta:0          90 NoteOn                 channel:0  note:F3, velocity:101
+      00 90 32 65                           tick:162000     delta:0          90 NoteOn                 channel:0  note:D3, velocity:101
+   89 00 80 2E 00                           tick:163152     delta:1152       80 NoteOff                channel:0  note:A♯2, velocity:0
+      00 80 43 00                           tick:163152     delta:0          80 NoteOff                channel:0  note:G4, velocity:0
+      00 80 35 00                           tick:163152     delta:0          80 NoteOff                channel:0  note:F3, velocity:0
+      00 80 32 00                           tick:163152     delta:0          80 NoteOff                channel:0  note:D3, velocity:0
+   82 20 90 3F 65                           tick:163440     delta:288        90 NoteOn                 channel:0  note:D♯4, velocity:101
+      00 90 30 65                           tick:163440     delta:0          90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 3B 65                           tick:163440     delta:0          90 NoteOn                 channel:0  note:B3, velocity:101
+   89 00 80 3F 00                           tick:164592     delta:1152       80 NoteOff                channel:0  note:D♯4, velocity:0
+      00 80 30 00                           tick:164592     delta:0          80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 3B 00                           tick:164592     delta:0          80 NoteOff                channel:0  note:B3, velocity:0
+   82 20 90 47 65                           tick:164880     delta:288        90 NoteOn                 channel:0  note:B4, velocity:101
+   89 00 80 47 00                           tick:166032     delta:1152       80 NoteOff                channel:0  note:B4, velocity:0
+   82 20 90 41 65                           tick:166320     delta:288        90 NoteOn                 channel:0  note:F4, velocity:101
+      00 90 46 65                           tick:166320     delta:0          90 NoteOn                 channel:0  note:A♯4, velocity:101
+   92 00 80 41 00                           tick:168624     delta:2304       80 NoteOff                channel:0  note:F4, velocity:0
+      00 80 46 00                           tick:168624     delta:0          80 NoteOff                channel:0  note:A♯4, velocity:0
+   84 40 90 3A 65                           tick:169200     delta:576        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:170352     delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 3A 65                           tick:170640     delta:288        90 NoteOn                 channel:0  note:A♯3, velocity:101
+   89 00 80 3A 00                           tick:171792     delta:1152       80 NoteOff                channel:0  note:A♯3, velocity:0
+   82 20 90 30 65                           tick:172080     delta:288        90 NoteOn                 channel:0  note:C3, velocity:101
+      00 90 3C 65                           tick:172080     delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   92 00 80 30 00                           tick:174384     delta:2304       80 NoteOff                channel:0  note:C3, velocity:0
+      00 80 3C 00                           tick:174384     delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+   84 40 90 24 65                           tick:174960     delta:576        90 NoteOn                 channel:0  note:C2, velocity:101
+      00 90 45 65                           tick:174960     delta:0          90 NoteOn                 channel:0  note:A4, velocity:101
+      00 90 37 65                           tick:174960     delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+   A1 60 90 34 65                           tick:179280     delta:4320       90 NoteOn                 channel:0  note:E3, velocity:101
+   84 40 80 34 00                           tick:179856     delta:576        80 NoteOff                channel:0  note:E3, velocity:0
+   81 10 90 35 65                           tick:180000     delta:144        90 NoteOn                 channel:0  note:F3, velocity:101
+   84 40 80 35 00                           tick:180576     delta:576        80 NoteOff                channel:0  note:F3, velocity:0
+   81 10 90 34 65                           tick:180720     delta:144        90 NoteOn                 channel:0  note:E3, velocity:101
+   90 70 90 40 65                           tick:182880     delta:2160       90 NoteOn                 channel:0  note:E4, velocity:101
+      00 90 37 65                           tick:182880     delta:0          90 NoteOn                 channel:0  note:G3, velocity:101
+      00 90 3C 65                           tick:182880     delta:0          90 NoteOn                 channel:0  note:C4, velocity:101
+   92 00 80 34 00                           tick:185184     delta:2304       80 NoteOff                channel:0  note:E3, velocity:0
+   89 00 80 24 00                           tick:186336     delta:1152       80 NoteOff                channel:0  note:C2, velocity:0
+      00 80 45 00                           tick:186336     delta:0          80 NoteOff                channel:0  note:A4, velocity:0
+      00 80 37 00                           tick:186336     delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+   AD 00 80 40 00                           tick:192096     delta:5760       80 NoteOff                channel:0  note:E4, velocity:0
+      00 80 37 00                           tick:192096     delta:0          80 NoteOff                channel:0  note:G3, velocity:0
+      00 80 3C 00                           tick:192096     delta:0          80 NoteOff                channel:0  note:C4, velocity:0
+      00 FF 2F 00                           tick:192096     delta:0          2F EndOfTrack
