@@ -2,7 +2,7 @@ import std/[streams]
 
 import union, stew/byteutils
 
-import macros, messages, types
+import macros, messages, types, metaEvents
 
 proc byteArrToValue(buffer: openArray[byte], len: Natural): uint32 =
     for i in 0..<len:
@@ -10,12 +10,18 @@ proc byteArrToValue(buffer: openArray[byte], len: Natural): uint32 =
 
 proc readBytes(file: FileStream, len: Natural): uint64 =
     var buffer: array[8, byte]
-    discard file.readData(addr(buffer), len)
+    var iter = 0
+    while iter < len:
+        buffer[iter] = file.readUint8
+        inc iter
     return byteArrToValue(buffer, len)
 
 proc readBytesIntoArray(file: FileStream, len: Natural): seq[byte] =
     var buffer = newSeq[byte](len)
-    discard file.readData(addr(buffer), len)
+    var iter = 0
+    while iter < len:
+        buffer[iter] = file.readUint8
+        inc iter
     return buffer
 
 proc toVarLen(value: uint): uint =
@@ -47,15 +53,15 @@ proc writeVarLen(file: FileStream, value: uint) =
 proc fromVarLen(file: FileStream): uint =
     var buffer: uint
     result = file.readBytes(1)
-    if result shl 7 > 0:
+    if (result and 0x80) > 0:
         ## 7-0 bits
         result = result and 0x7F
         buffer = file.readBytes(1)
         ## append 7-0 bits
-        result = result shl 7 + (buffer and 0x7F)
-        while buffer shl 7 > 0:
+        result = (result shl 7) + (buffer and 0x7F)
+        while (buffer and 0x80) > 0:
             buffer = file.readBytes(1)
-            result = result shl 7 + (buffer and 0x7F)
+            result = (result shl 7) + (buffer and 0x7F)
 
 proc readHeader(file: FileStream): RawHeader =
     var chunkName = file.readStr(4)
@@ -90,141 +96,78 @@ proc parseHeader(raw: RawHeader): Header =
         ## 14-0 bits
         result.ticks = raw.division and 0x7FFF
 
-proc handleChannelVoice(event: var MIDIEvent, file: FileStream, data: byte): int =
+proc handleChannelVoice(file: FileStream, data: byte): MIDIEvent =
     ## Handles channel voice messages. Returns number of bytes read
+    var event: MIDIEvent
     let status = data and 0xF0
     event.channel = data and 0x0F
     event.firstData = (byte)file.readBytes(1)
-    result = 2
     case status
-    of 0x8:
+    of 0x80:
         event.message = NoteOff
         event.secondData = (byte)file.readBytes(1)
-    of 0x9:
+    of 0x90:
         event.message = NoteOn
         event.secondData = (byte)file.readBytes(1)
-    of 0xA:
+    of 0xA0:
         event.message = KeyPressure
         event.secondData = (byte)file.readBytes(1)
-    of 0xB:
+    of 0xB0:
         event.message = ControlChange
         event.secondData = (byte)file.readBytes(1)
-    of 0xC:
+    of 0xC0:
         event.message = ProgramChange
-        result -= 1
-    of 0xD:
+    of 0xD0:
         event.message = ChannelPressure
-        result -= 1
-    of 0xE:
+    of 0xE0:
         event.message = PitchWheel
         event.secondData = (byte)file.readBytes(1)
     else:
         raise newException(ObjectConversionDefect, "Could not parse channel voice event from given data")
+    return event
 
-proc handleMeta(event: var MetaEvent, file: FileStream): int =
+proc handleMeta(file: FileStream): MetaEvent =
     ## Handles meta messages. Returns number of bytes read
-    let metaType = file.readBytes(1)
-    result = 1
-    case metaType
-    of 0x00:
-        event.event = SeqNumber
-        event.data = file.readBytesIntoArray(2)
-        result += 2
-    of 0x01:
-        event.event = Text
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x02:
-        event.event = CopyRight
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x03:
-        event.event = TrackName
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x04:
-        event.event = InstrumentName
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x05:
-        event.event = Lyric
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x06:
-        event.event = Marker
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x07:
-        event.event = CuePoint
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    of 0x20:
-        event.event = ChannelPrefix
-        event.data = file.readBytesIntoArray(1)
-        result += 1
-    of 0x2F:
-        event.event = EndOfTrack
-        result += 0
-    of 0x51:
-        event.event = SetTempo
-        event.data = file.readBytesIntoArray(3)
-        result += 3
-    of 0x54:
-        event.event = SMPTEOffset
-        event.data = file.readBytesIntoArray(5)
-        result += 5
-    of 0x58:
-        event.event = TimeSignature
-        event.data = file.readBytesIntoArray(4)
-        result += 4
-    of 0x59:
-        event.event = KeySignature
-        event.data = file.readBytesIntoArray(2)
-        result += 2
-    of 0x7F:
-        event.event = SequencerSpecific
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
-    else:
-        event.event = Unknown
-        let length = fromVarLen(file)
-        event.data = file.readBytesIntoArray(length)
-        result += varLenSize(length)
+    var event: MetaEvent
+    let metaType = (byte)file.readBytes(1)
+    var length: uint
+    event.event = matchMetaEvent(metaType)
+    length = fromVarLen(file)
+    event.data = file.readBytesIntoArray(length)
+    return event
 
 proc readTrack(file: FileStream): Track =
     var chunkName = file.readStr(4)
     echo chunkName
     if chunkName != "MTrk":
-        raise newException(ObjectConversionDefect, "Unexpected header chunk read")
+        raise newException(ObjectConversionDefect, "Couldn't find track chunk")
     result.length = file.readBytes(4)
-    var bytesRead = 0
-    while bytesRead < int(result.length) - 1:
+    var start = file.getPosition
+    while file.getPosition - start < int(result.length) - 1:
         var event: Event
         var deltaTime = fromVarLen(file)
-        bytesRead += varLenSize(deltaTime)
+        event.dt = deltaTime
         var status = (byte)file.readBytes(1)
-        bytesRead += 1
         ## Handle channel voice messages
-        if int(status and 0xF0) in 0x8..0xE:
-            var midi: MIDIEvent
-            bytesRead += handleChannelVoice(midi, file, status)
-            event.event <- midi
+        if (int(status) and 0xF0) in 0x80..0xE0:
+            event.event <- handleChannelVoice(file, status)
         elif status == 0xFF:
             ## Handle meta messages
-            var meta: MetaEvent
-            bytesRead += handleMeta(meta, file)
-            event.event <- meta
+            event.event <- handleMeta(file)
+        elif status < 0x80:
+            var midi: MIDIEvent
+            midi = result.events[^1].event as MIDIEvent
+            midi.firstData = status
+            midi.secondData = (byte)file.readBytes(1)
+            event.event <- midi
         else:
-            echo status
-            echo "Ignoring unknown event"
+            echo "Unsupported message found. Will try to continue parsing."
+            if status == 0xF0 or status == 0xF7:
+                let length = fromVarLen(file)
+                var iter = 0'u
+                while iter < length:
+                    discard file.readUint8()
+                    inc iter
         result.events.add(event)
 
 
@@ -234,8 +177,9 @@ proc parseFile(file: FileStream) =
     var tracks = newSeq[Track](header.numTracks)
     for i in 0..<int(header.numTracks):
         tracks[i] = readTrack(file)
-    echo tracks[0]
+        echo tracks[i]
 ## TODO: expand macros type exporting bug
 
-let handle = openFileStream("print_h_5.mid")
+let handle = openFileStream("Test_-_test1.mid")
+# let handle = openFileStream("print_h_5.mid")
 parseFile(handle)

@@ -41,7 +41,7 @@ showAll:
             event: MetaEventType
             data: seq[byte]
         Event* = object
-            dt*: int
+            dt*: uint
             event*: union(MIDIEvent | SysexEvent | MetaEvent)
         Track = object
             length: uint
