@@ -1,8 +1,6 @@
 import std/[streams]
 
-import union, stew/byteutils
-
-import macros, messages, types, metaEvents
+import types
 
 proc byteArrToValue(buffer: openArray[byte], len: Natural): uint32 =
     for i in 0..<len:
@@ -32,14 +30,6 @@ proc toVarLen(value: uint): uint =
         result = result or 0x80
         result += copy and 0x7f
         copy = copy shr 7
-
-proc varLenSize(value: uint): int =
-    var size = 1
-    var copy = value
-    while copy > 0x7f:
-        size += 1
-        copy = copy shr 7
-    return size
 
 proc writeVarLen(file: FileStream, value: uint) =
     var buffer = toVarLen(value)
@@ -98,33 +88,30 @@ proc parseHeader(raw: RawHeader): Header =
 
 proc handleChannelVoice(file: FileStream, data: byte): MIDIEvent =
     ## Handles channel voice messages. Returns number of bytes read
-    var event: MIDIEvent
     let status = data and 0xF0
-    event.channel = data and 0x0F
-    event.firstData = (byte)file.readBytes(1)
+    var kind: Message
+    var channel = int(data and 0x0F)
     case status
     of 0x80:
-        event.message = NoteOff
-        event.secondData = (byte)file.readBytes(1)
+        kind = NoteOff
     of 0x90:
-        event.message = NoteOn
-        event.secondData = (byte)file.readBytes(1)
+        kind = NoteOn
     of 0xA0:
-        event.message = KeyPressure
-        event.secondData = (byte)file.readBytes(1)
+        kind = KeyPressure
     of 0xB0:
-        event.message = ControlChange
-        event.secondData = (byte)file.readBytes(1)
+        kind = ControlChange
     of 0xC0:
-        event.message = ProgramChange
+        kind = ProgramChange
     of 0xD0:
-        event.message = ChannelPressure
+        kind = ChannelPressure
     of 0xE0:
-        event.message = PitchWheel
-        event.secondData = (byte)file.readBytes(1)
+        kind = PitchWheel
     else:
         raise newException(ObjectConversionDefect, "Could not parse channel voice event from given data")
-    return event
+    if kind == ProgramChange or kind == ChannelPressure:
+        return newMIDIEvent(kind, channel, (byte)file.readBytes(1), 0)
+    else:
+        return newMIDIEvent(kind, channel, (byte)file.readBytes(1), (byte)file.readBytes(1))
 
 proc handleMeta(file: FileStream): MetaEvent =
     ## Handles meta messages. Returns number of bytes read
@@ -146,20 +133,23 @@ proc readTrack(file: FileStream): Track =
     while file.getPosition - start < int(result.length) - 1:
         var event: Event
         var deltaTime = fromVarLen(file)
-        event.dt = deltaTime
         var status = (byte)file.readBytes(1)
         ## Handle channel voice messages
         if (int(status) and 0xF0) in 0x80..0xE0:
-            event.event <- handleChannelVoice(file, status)
+            event = Event(event: MIDI, dt: deltaTime)
+            event.midi = handleChannelVoice(file, status)
         elif status == 0xFF:
             ## Handle meta messages
-            event.event <- handleMeta(file)
+            event = Event(event: Meta, dt: deltaTime)
+            event.meta = handleMeta(file)
         elif status < 0x80:
+            ## Handle running status
             var midi: MIDIEvent
-            midi = result.events[^1].event as MIDIEvent
-            midi.firstData = status
-            midi.secondData = (byte)file.readBytes(1)
-            event.event <- midi
+            midi = result.events[^1].midi
+            # These messages can't use running status
+            assert midi.kind != ProgramChange and midi.kind != ChannelPressure
+            midi = newMIDIEvent(midi.kind, midi.channel, status, (byte)file.readBytes(1))
+            event.midi = midi
         else:
             echo "Unsupported message found. Will try to continue parsing."
             if status == 0xF0 or status == 0xF7:
@@ -168,6 +158,8 @@ proc readTrack(file: FileStream): Track =
                 while iter < length:
                     discard file.readUint8()
                     inc iter
+            else:
+                raise newException(Defect, "Couldn't get the message length, quitting.")
         result.events.add(event)
 
 
@@ -181,5 +173,5 @@ proc parseFile(file: FileStream) =
 ## TODO: expand macros type exporting bug
 
 let handle = openFileStream("Test_-_test1.mid")
-# let handle = openFileStream("print_h_5.mid")
+#let handle = openFileStream("print_h_5.mid")
 parseFile(handle)
