@@ -22,12 +22,12 @@ showAll:
         RawHeader = object
             length: uint32
             format: uint16
-            numTrackChunks: uint16
+            tracks: uint16
             division: uint16
         Header = object
             length: uint8
             format: FileFormat
-            numTracks: uint16
+            tracks: uint16
             division: DivisionType
             ticks: uint16
             negativeSMPTE: int
@@ -70,6 +70,9 @@ type
     Track* = object
         length*: uint
         events*: seq[Event]
+    MIDIFile* = object
+        header*: Header
+        tracks*: seq[Track]
 
 proc newMIDIEvent*(kind: Message, channel: int, firstData: byte, secondData: byte): MIDIEvent =
     result = MIDIEvent(kind: kind, channel: channel)
@@ -88,7 +91,8 @@ proc newMIDIEvent*(kind: Message, channel: int, firstData: byte, secondData: byt
     of ChannelPressure:
         result.channelPressure = firstData
     of PitchWheel:
-        result.pitchChange = int16(firstData) or (int16(secondData) shl 8)
+        result.pitchChange = int16(firstData) or (int16(secondData) shl 7)
+
 
 proc `$`*(t: Track): string =
     # pretty print a track

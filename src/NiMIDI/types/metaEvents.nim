@@ -51,3 +51,38 @@ proc matchMetaEvent*(value: byte): MetaEventType =
         result = SequencerSpecific
     else:
         result = Unknown
+
+proc fromMetaEvent*(value: MetaEventType): byte =
+    case value
+    of SeqNumber:
+        result = 0x00
+    of Text:
+        result = 0x01
+    of CopyRight:
+        result = 0x02
+    of TrackName:
+        result = 0x03
+    of InstrumentName:
+        result = 0x04
+    of Lyric:
+        result = 0x05
+    of Marker:
+        result = 0x06
+    of CuePoint:
+        result = 0x07
+    of ChannelPrefix:
+        result = 0x20
+    of EndOfTrack:
+        result = 0x2F
+    of SetTempo:
+        result = 0x51
+    of SMPTEOffset:
+        result = 0x54
+    of TimeSignature:
+        result = 0x58
+    of KeySignature:
+        result = 0x59
+    of SequencerSpecific:
+        result = 0x7F
+    else:
+        result = 0x00
