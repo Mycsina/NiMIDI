@@ -45,18 +45,11 @@ proc toVarLen(value: uint): uint =
 proc writeVarLen(file: FileStream, value: uint) =
     var buffer = toVarLen(value)
     while true:
-        echo "s"
-        echo buffer
-        echo buffer and 0xff
-        echo buffer and 0x80
-        echo buffer shr 7
         file.write(buffer.uint8 and 0xff)
         if (buffer and 0x80) != 0:
             buffer = buffer shr 8
         else:
             break
-    if value == 24961:
-        raise newException(Exception, "wtf")
 
 proc writeHeader*(file: FileStream, header: Header) =
     file.write("MThd")
@@ -68,16 +61,17 @@ proc writeHeader*(file: FileStream, header: Header) =
 
 proc fromNoteOctave(note: NoteOctave): uint8 =
     var intermediate = note.note.int
-    intermediate += note.octave.int * 12
+    intermediate += (note.octave.int + 1) * 12
     result = intermediate.uint8
 
-proc writeMIDI*(file: FileStream, midi: MIDIEvent) =
+proc writeMIDI*(file: FileStream, midi: MIDIEvent, running: bool) =
     ## Write MIDI event to file
 
     ## Little hack using enum int values to avoid having to write same code
     ## for each case
     let bundle = (0x80 + midi.kind.int * 0x10) + midi.channel
-    file.writeFixedLength(bundle, 1)
+    if not running:
+        file.writeFixedLength(bundle, 1)
     case midi.kind:
     of NoteOff, NoteOn:
         let data = midi.note.fromNoteOctave()
@@ -95,9 +89,12 @@ proc writeMIDI*(file: FileStream, midi: MIDIEvent) =
     of ChannelPressure:
         file.writeFixedLength(midi.channelPressure, 1)
     of PitchWheel:
-        file.writeFixedLength(midi.pitchChange, 2)
+        let firstByte = midi.pitchChange and 0x7f
+        let secondByte = (midi.pitchChange shr 7) and 0x7f
+        file.writeFixedLength(firstByte, 1)
+        file.writeFixedLength(secondByte, 1)
 
-proc writeMeta*(file: FileStream, meta: MetaEvent) =
+proc writeMeta*(file: FileStream, meta: MetaEvent, running: bool) =
     file.writeFixedLength(0xff, 1)
     let status = fromMetaEvent(meta.event)
     file.writeFixedLength(status, 1)
@@ -111,15 +108,24 @@ proc writeSysex*(file: FileStream, sysex: SysexEvent) =
 proc writeTrack*(file: FileStream, track: Track) =
     file.write("MTrk")
     file.writeFixedLength(track.length, 4)
+    var lastEvent = track.events[0]
     for event in track.events:
         file.writeVarLen(event.dt)
         case event.event
         of MIDI:
-            file.writeMIDI(event.midi)
+            var running = false
+            if lastEvent.event == MIDI:
+                running = event.midi.kind == lastEvent.midi.kind
+                running = running and event.midi.channel == lastEvent.midi.channel
+            file.writeMIDI(event.midi, running)
         of Sysex:
             file.writeSysex(event.sysex)
         of Meta:
-            file.writeMeta(event.meta)
+            var running = false
+            if lastEvent.event == Meta:
+                running = event.meta.event == lastEvent.meta.event
+            file.writeMeta(event.meta, running)
+        lastEvent = event
 
 proc writeMIDIFile*(file: FileStream, midi: MIDIFile) =
     file.writeHeader(midi.header)

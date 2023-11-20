@@ -1,4 +1,4 @@
-import std/[streams, sequtils]
+import std/[streams, sequtils, os]
 
 import ../src/NiMIDI/[parser, writer]
 
@@ -19,3 +19,4 @@ while not t1.atEnd or not t2.atEnd:
         echo "byte1: ", byte1, " byte2: ", byte2
         echo t1.getPosition
         break
+    removeFile("tests/res/test2.mid")

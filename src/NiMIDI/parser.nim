@@ -101,6 +101,7 @@ proc readTrack(file: FileStream): Track =
         if status < 0x80:
             ## Handle running status
             var midi: MIDIEvent
+            event = Event(event: MIDI, dt: deltaTime)
             midi = result.events[^1].midi
             # These messages can't use running status
             assert midi.kind != ProgramChange and midi.kind != ChannelPressure
