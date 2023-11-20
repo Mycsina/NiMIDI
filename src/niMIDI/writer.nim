@@ -127,7 +127,12 @@ proc writeTrack*(file: FileStream, track: Track) =
             file.writeMeta(event.meta, running)
         lastEvent = event
 
-proc writeMIDIFile*(file: FileStream, midi: MIDIFile) =
+proc writeMIDI*(file: FileStream, midi: MIDIFile) =
     file.writeHeader(midi.header)
     for track in midi.tracks:
         file.writeTrack(track)
+
+proc writeMIDI*(file: string, midi: MIDIFile) =
+    var stream = openFileStream(file, fmWrite)
+    defer: stream.close()
+    stream.writeMIDI(midi)

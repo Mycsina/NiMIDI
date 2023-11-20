@@ -2,7 +2,7 @@
 
 version       = "0.1.0"
 author        = "Mycsina"
-description   = "A new awesome nimble package"
+description   = "MIDI file parser in Nim, for Nim"
 license       = "MIT"
 srcDir        = "src"
 

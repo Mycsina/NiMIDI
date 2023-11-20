@@ -103,8 +103,6 @@ proc readTrack(file: FileStream): Track =
             var midi: MIDIEvent
             event = Event(event: MIDI, dt: deltaTime)
             midi = result.events[^1].midi
-            # These messages can't use running status
-            assert midi.kind != ProgramChange and midi.kind != ChannelPressure
             midi = newMIDIEvent(midi.kind, midi.channel, status, (byte)file.readBytes(1))
             event.midi = midi
         elif (int(status) and 0xF0) in 0x80..0xE0:
@@ -135,3 +133,8 @@ proc parseFile*(file: FileStream): MIDIFile =
     result.tracks = newSeq[Track](int(result.header.tracks))
     for i in 0..<int(result.header.tracks):
         result.tracks[i] = readTrack(file)
+
+proc parseFile*(filename: string): MIDIFile =
+    var file = openFileStream(filename, fmRead)
+    defer: file.close()
+    return parseFile(file)
